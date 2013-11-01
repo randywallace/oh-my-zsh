@@ -51,9 +51,9 @@ if which docker &> /dev/null; then
   last_container_id='‹$(docker ps -l | grep -E "Up [0-9]" &> /dev/null; if [[ $? -eq 0 ]]; then echo ${PR_GREEN}; else echo ${PR_MAGENTA}; fi)$(docker ps -q -l)${PR_NO_COLOR}›'
 fi
 
-PROMPT="╭─${user_host} ${current_dir} ${git_branch}${last_container_count} ${last_container_id} ${return_code}
+PROMPT="╭─${user_host} ${current_dir} ${git_branch}${last_container_count} ${last_container_id} ${rvm_ruby} ${return_code}
 ╰─$PR_PROMPT "
-RPS1="${rvm_ruby}"
+#RPS1="${rvm_ruby}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$PR_YELLOW%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$PR_NO_COLOR%}"
