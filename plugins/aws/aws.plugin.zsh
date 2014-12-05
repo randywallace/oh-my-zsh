@@ -8,6 +8,10 @@ _awscli-homebrew-installed() {
 
 export AWS_HOME=~/.aws
 
+if [ -e '/etc/aws_config.conf' ]; then
+  export AWS_CONFIG_FILE='/etc/aws_config.conf'
+fi
+
 function agp {
   echo $AWS_DEFAULT_PROFILE
 }
